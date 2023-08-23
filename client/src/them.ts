@@ -1,7 +1,7 @@
 export const lightTheme = {
 
   theme: "light",
-  colorBackground: '#FFFFFF',
+  colorBackground: '#FAFAFA',
   colorBackgroundItem: '#FFFFFF',
   colorTextItem: '#494C6B',
   colorTextCompletedItem: '#D1D2DA',
@@ -10,6 +10,8 @@ export const lightTheme = {
   colorTextHoverFilter: '#494C6B',
   colorTextHeader: '#FFFFFF',
   colorLine: '#E3E4F1',
+  colorCross: '#D8D8D8',
+  white: '#FFFFFF',
 
 };
 
@@ -25,5 +27,7 @@ export const darkTheme = {
   colorTextHoverFilter: '#E3E4F1',
   colorTextHeader: '#FFFFFF',
   colorLine: '#393A4B',
+  colorCross: '#D8D8D8',
+  white: '#FFFFFF',
 
 };
