@@ -1,21 +1,5 @@
 import styled from 'styled-components';
 
-export const TodoListContainer = styled.div`
-  width: 100%;
-  border-radius: 5px;
-  background-color: ${props => props.theme.colorBackgroundItem};
-  color: ${props => props.theme.colorTextItem};
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  div{
-    border-bottom: 1px solid ${props => props.theme.colorLine};
-  }
-`;
-
-
 export const TodoFooterContainer = styled.div`
   width: 100%;
   padding: 20px 24px;

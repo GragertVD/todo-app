@@ -1,23 +1,47 @@
-import { ITodoItem, TodoListAction, TodoListActionTypes, TodoListState } from "../../types/todo";
+import { ITodoItem, TodoListAction, TodoListActionTypes, TodoListState, typeFilter } from "../../types/todo";
 
-const initState: TodoListState = [];
+const initState: TodoListState = {
+  items: [],
+  typeFilter: 'all',
+};
 
 export const todoReducer = (state: TodoListState = initState, action: TodoListAction): TodoListState => {
 
   switch (action.type) {
     case TodoListActionTypes.ADD_TODO_ITEM:
       const newTodoItem: ITodoItem = {
-        id: state.length,
+        id: state.items.length,
         text: action.payload,
         completed: false,
       }
-      return [...state, newTodoItem];
+      return {
+        items: [...state.items, newTodoItem],
+        typeFilter: state.typeFilter,
+      }
 
     case TodoListActionTypes.REMOVE_TODO_ITEM:
-      return state.filter((item) => item.id !== action.payload);
+      return {
+        items: state.items.filter((item) => item.id !== action.payload),
+        typeFilter: state.typeFilter,
+      }
 
     case TodoListActionTypes.TOGGLE_COMPLETED_TODO_ITEM:
-      return state.map((item) => item.id !== action.payload? item: {...item, completed: !item.completed});
+      return {
+        items: state.items.map((item) => item.id !== action.payload ? item : { ...item, completed: !item.completed }),
+        typeFilter: state.typeFilter,
+      }
+
+    case TodoListActionTypes.CLEAR_COMPLETED:
+      return {
+        items: state.items.filter((item) => !item.completed),
+        typeFilter: state.typeFilter,
+      }
+
+    case TodoListActionTypes.SET_FILTER:
+      return {
+        items: state.items,
+        typeFilter: action.payload,
+      }
 
     default:
       return state;
@@ -27,3 +51,5 @@ export const todoReducer = (state: TodoListState = initState, action: TodoListAc
 export const addTodoItemAction = (payload: string) => ({ type: TodoListActionTypes.ADD_TODO_ITEM, payload });
 export const removeTodoItemAction = (payload: number) => ({ type: TodoListActionTypes.REMOVE_TODO_ITEM, payload });
 export const toggleCompletedTodoItemAction = (payload: number) => ({ type: TodoListActionTypes.TOGGLE_COMPLETED_TODO_ITEM, payload });
+export const clearCompletedAction = () => ({ type: TodoListActionTypes.CLEAR_COMPLETED });
+export const setFilterAction = (payload: typeFilter) => ({ type: TodoListActionTypes.SET_FILTER, payload });
