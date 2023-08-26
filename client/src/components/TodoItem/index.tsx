@@ -8,8 +8,11 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
 
   const dispatch = useDispatch();
 
+
   return (
-    <TodoItemContainer onClick={() => dispatch(toggleCompletedTodoItemAction(id))}>
+    <TodoItemContainer
+      onClick={() => dispatch(toggleCompletedTodoItemAction(id))}
+    >
       {
         completed
           ?
@@ -24,7 +27,14 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
           </>
 
       }
-      <Button onClick={() => dispatch(removeTodoItemAction(id))} />
+      <Button
+        onClick={
+          (e) => {
+            dispatch(removeTodoItemAction(id))
+            e.stopPropagation();
+          }
+        }
+      />
     </TodoItemContainer>
   );
 }

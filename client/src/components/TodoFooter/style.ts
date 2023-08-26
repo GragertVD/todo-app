@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TodoFooterContainer = styled.div`
+export const TodoFooterContainer = styled.div<{selectFilterNumber:number}>`
   width: 100%;
   padding: 20px 24px;
   border-radius: 5px;
@@ -11,7 +11,7 @@ export const TodoFooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
+  
   button{
     cursor: pointer;
     padding: 0;
@@ -27,8 +27,10 @@ export const TodoFooterContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 18px;
+
+    button:nth-child(${props => props.selectFilterNumber}) {
+      color: ${props => props.theme.colorTextSelectFilter};
+    }
   }
 
 `;
-
-

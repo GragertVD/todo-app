@@ -16,7 +16,7 @@ export const TodoListContainer = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: purple;
+    background-color: ${props => props.theme.colorScrollbar};
     border-radius: 20px;
   }
   &::-webkit-scrollbar-track {
@@ -37,7 +37,7 @@ export const TodoListContainer = styled.div`
   }
   & {
     -ms-overflow-style: auto;
-    scrollbar-color: purple ${props => props.theme.colorLine};
+    scrollbar-color: ${props => props.theme.colorScrollbar} ${props => props.theme.colorLine};
     scrollbar-width: thin;
   }
 `;

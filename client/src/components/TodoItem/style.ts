@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const TodoItemContainer = styled.div`
   width: 100%;
-  /* height: 64px; */
+  overflow: hidden;
+  min-height: 64px;
   padding: 20px 24px;
   border-radius: 5px;
   background-color: ${props => props.theme.colorBackgroundItem};
@@ -17,11 +18,19 @@ export const TodoItemContainer = styled.div`
   button{
     opacity: 0;
   }
-	&:hover {
+
+  @media (any-hover: hover) {
+    &:hover {
+      button{
+        opacity: 1;
+      }
+    }
+  }
+  @media (any-hover: none) {
     button{
       opacity: 1;
     }
-	}
+  }
 
 `;
 
@@ -66,12 +75,6 @@ export const TextCompleted = styled.p`
   border: none;
   font-size: 1.125rem;
   width: 100%;
-  &::before{
-    content: ' ';
-    display: block;
-    width: 20px;
-    height: 3px;
-  }
 `;
 
 
@@ -86,8 +89,11 @@ export const Button = styled.button`
   position: relative;
 
   transition: all 0.3s;
-  &:hover {
-    transform: rotate(180deg);
+  
+  @media (any-hover: hover) {
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
 
   &::before,

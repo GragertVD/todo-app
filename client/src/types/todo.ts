@@ -44,4 +44,5 @@ export type typeFilter = 'completed' | 'notCompleted' | 'all';
 export interface TodoListState {
   items: ITodoItem[];
   typeFilter: typeFilter;
+  itemsLeft: number;
 }

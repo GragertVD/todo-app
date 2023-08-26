@@ -11,6 +11,7 @@ export const lightTheme = {
   colorTextHeader: '#FFFFFF',
   colorLine: '#E3E4F1',
   colorCross: '#D8D8D8',
+  colorScrollbar: 'cornflowerblue',
   white: '#FFFFFF',
 
 };
@@ -23,11 +24,12 @@ export const darkTheme = {
   colorTextItem: '#C8CBE7',
   colorTextCompletedItem: '#4D5067',
   colorTextFilter: '#9495A5',
-  colorTextSelectFilter: '#5B5E7E',
+  colorTextSelectFilter: '#3A7CFD',
   colorTextHoverFilter: '#E3E4F1',
   colorTextHeader: '#FFFFFF',
   colorLine: '#393A4B',
   colorCross: '#D8D8D8',
+  colorScrollbar: 'purple',
   white: '#FFFFFF',
 
 };
