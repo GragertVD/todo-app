@@ -8,19 +8,18 @@ export const AppContainer = styled.div`
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% 30%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
 `;
 
 export const TodoContainer = styled.div`
   max-width: 540px;
-  max-height: 100%;
-  width: 87%;
+  height: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 0;
+  gap: 40px;
+  padding-top: 70px;
+  margin: 0 auto;
 `;
 
