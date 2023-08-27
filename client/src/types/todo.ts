@@ -5,6 +5,7 @@ export enum TodoListActionTypes {
   TOGGLE_COMPLETED_TODO_ITEM = 'TOGGLE_COMPLETED_TODO_ITEM',
   CLEAR_COMPLETED = 'CLEAR_COMPLETED',
   SET_FILTER = 'SET_FILTER',
+  EDIT_TEXT_ITEM = 'EDIT_TEXT_ITEM',
 }
 
 interface AddTodoItemAction {
@@ -31,7 +32,12 @@ interface setFilterTodoItemAction {
   payload: typeFilter;
 }
 
-export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction | ClearCompletedAction | setFilterTodoItemAction;
+interface EditTextItemAction {
+  type: TodoListActionTypes.EDIT_TEXT_ITEM;
+  payload: { id: number, newText: string };
+}
+
+export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction | ClearCompletedAction | setFilterTodoItemAction | EditTextItemAction;
 
 export interface ITodoItem {
   id: number;

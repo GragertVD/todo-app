@@ -51,9 +51,9 @@ export const todoReducer = (state: TodoListState = initState, action: TodoListAc
     case TodoListActionTypes.CLEAR_COMPLETED:
       let missItem = 0;
       for (let i = 0; i < state.items.length; i++) {
-        if (state.items[i].completed){
+        if (state.items[i].completed) {
           missItem++;
-        }else{
+        } else {
           resultItems.push({ id: state.items[i].id - missItem, text: state.items[i].text, completed: state.items[i].completed });
         }
       }
@@ -71,6 +71,17 @@ export const todoReducer = (state: TodoListState = initState, action: TodoListAc
         itemsLeft: state.itemsLeft,
       }
 
+    case TodoListActionTypes.EDIT_TEXT_ITEM:
+
+      const newItems = [...state.items];
+      newItems[action.payload.id].text = action.payload.newText;
+
+      return {
+        items: newItems,
+        typeFilter: state.typeFilter,
+        itemsLeft: state.itemsLeft,
+      }
+
     default:
       return state;
   }
@@ -81,3 +92,4 @@ export const removeTodoItemAction = (payload: number) => ({ type: TodoListAction
 export const toggleCompletedTodoItemAction = (payload: number) => ({ type: TodoListActionTypes.TOGGLE_COMPLETED_TODO_ITEM, payload });
 export const clearCompletedAction = () => ({ type: TodoListActionTypes.CLEAR_COMPLETED });
 export const setFilterAction = (payload: typeFilter) => ({ type: TodoListActionTypes.SET_FILTER, payload });
+export const editTextItemAction = (payload: { id: number, newText: string }) => ({ type: TodoListActionTypes.EDIT_TEXT_ITEM, payload });

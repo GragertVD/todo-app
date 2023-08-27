@@ -1,36 +1,66 @@
-import { removeTodoItemAction, toggleCompletedTodoItemAction } from "../../store/reducers/todoReducer";
+import { useEffect, useState } from "react";
+import { editTextItemAction, removeTodoItemAction, toggleCompletedTodoItemAction } from "../../store/reducers/todoReducer";
 import { ITodoItem } from "../../types/todo";
-import { TodoItemContainer, TextNotCompleted, Button, CircleNotCompleted, CircleCompleted, TextCompleted } from "./style";
+import { TodoItemContainer, CircleItem, TextItem, ButtonDeleted, EditInputTextItem, ButtonEdit } from "./style";
 import { useDispatch } from 'react-redux';
+import { GrEdit } from "react-icons/gr";
+
 
 
 export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
 
   const dispatch = useDispatch();
 
+  const [stateEdit, setStateEdit] = useState<boolean>(false);
+  const [editText, setEditText] = useState<string>(text);
+
+  useEffect(() => {
+    setEditText(text);
+  }, [text]);
+  
 
   return (
     <TodoItemContainer
-      onClick={() => dispatch(toggleCompletedTodoItemAction(id))}
+      onClick={() => !stateEdit && dispatch(toggleCompletedTodoItemAction(id))}
     >
+      <CircleItem completed={completed} />
       {
-        completed
+        stateEdit
           ?
-          <>
-            <CircleCompleted />
-            <TextCompleted>{text}</TextCompleted>
-          </>
+          <form
+            onSubmit={
+              (e) => {
+                dispatch(editTextItemAction({ id: id, newText: editText }));
+                setStateEdit(false);
+                e.preventDefault();
+              }
+            }
+          >
+            <EditInputTextItem
+              value={editText}
+              onChange={e => setEditText(e.target.value)}
+            />
+          </form>
           :
-          <>
-            <CircleNotCompleted />
-            <TextNotCompleted>{text}</TextNotCompleted>
-          </>
-
+          <TextItem completed={completed}>{text}</TextItem>
       }
-      <Button
+      <ButtonEdit
+        stateEdit={stateEdit}
         onClick={
           (e) => {
-            dispatch(removeTodoItemAction(id))
+            setStateEdit(!stateEdit);
+            e.stopPropagation();
+          }
+        }
+      >
+        <GrEdit />
+      </ButtonEdit>
+      <ButtonDeleted
+        onClick={
+          (e) => {
+            setStateEdit(false);
+            dispatch(removeTodoItemAction(id));
+            setEditText(text);
             e.stopPropagation();
           }
         }
