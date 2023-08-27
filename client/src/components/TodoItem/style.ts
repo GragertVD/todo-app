@@ -110,13 +110,17 @@ export const ButtonEdit = styled.button<{ stateEdit: boolean }>`
     }
   }
 
+  &:focus{
+    opacity: 1;
+  }
+
   
   @media (any-hover: hover) {
     &:hover {
       transform: rotate(-20deg);
     }
   }
-  animation: ${props => props.stateEdit? animEditIcon: 0} 1s linear infinite
+  animation: ${props => props.stateEdit? animEditIcon: 0} 1s linear infinite;
 `
 
 
@@ -133,6 +137,10 @@ export const ButtonDeleted = styled.button`
 
   transition: all 0.3s;
   
+  &:focus{
+    opacity: 1;
+  }
+
   @media (any-hover: hover) {
     &:hover {
       transform: rotate(90deg);

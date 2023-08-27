@@ -17,9 +17,19 @@ export const Header: React.FC = () => {
       {
         mainState.theme === 'light'
           ?
-          <LogoMoon onClick={() => dispatch(setThemAction('dark'))} />
+          <LogoMoon
+            role="button"
+            tabIndex={0}
+            onClick={() => dispatch(setThemAction('dark'))}
+            onKeyDown={(e) => e.key === 'Enter' && dispatch(setThemAction('dark'))}
+          />
           :
-          <LogoSun onClick={() => dispatch(setThemAction('light'))} />
+          <LogoSun
+            role="button"
+            tabIndex={0}
+            onClick={() => dispatch(setThemAction('light'))}
+            onKeyDown={(e) => e.key === 'Enter' && dispatch(setThemAction('light'))}
+          />
       }
     </HeaderContainer>
   );
