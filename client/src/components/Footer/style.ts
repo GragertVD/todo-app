@@ -4,7 +4,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   margin-top: auto;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ export const FooterContainer = styled.footer`
 
 export const ContactsContainer = styled.div`
   display: flex;
-  gap: 8px;  
+  gap: 6px;  
   a{
     color: ${props => props.theme.colorTextItem};
   }

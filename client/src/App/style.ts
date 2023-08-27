@@ -21,5 +21,10 @@ export const TodoContainer = styled.div`
   gap: 40px;
   padding-top: 70px;
   margin: 0 auto;
+
+  ${props => props.theme.beforeMobileL}{
+    padding-top: 20px;
+  }
+
 `;
 

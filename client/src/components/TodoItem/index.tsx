@@ -49,6 +49,7 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
         onClick={
           (e) => {
             setStateEdit(!stateEdit);
+            e.currentTarget.blur();
             e.stopPropagation();
           }
         }
@@ -61,6 +62,7 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
             setStateEdit(false);
             dispatch(removeTodoItemAction(id));
             setEditText(text);
+            e.currentTarget.blur();
             e.stopPropagation();
           }
         }

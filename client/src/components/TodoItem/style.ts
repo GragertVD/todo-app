@@ -15,7 +15,7 @@ export const TodoItemContainer = styled.div`
   
   cursor: pointer;
 
-  @media (any-hover: hover) {
+  @media (hover: hover) {
     button{
       opacity: 0;
     }
@@ -29,6 +29,13 @@ export const TodoItemContainer = styled.div`
   form{
     width: 100%;
   }
+
+
+  ${props => props.theme.beforeMobileL}{
+    min-height: 50px;
+    padding: 12px 14px;
+    gap: 14px;
+  }
 `;
 
 export const TextItem = styled.p<{ completed: boolean }>`
@@ -38,6 +45,7 @@ export const TextItem = styled.p<{ completed: boolean }>`
   border: none;
   font-size: 1.125rem;
   width: 100%;
+  overflow: hidden;
 `;
 
 export const CircleItem = styled.div<{ completed: boolean }>`
@@ -115,12 +123,19 @@ export const ButtonEdit = styled.button<{ stateEdit: boolean }>`
   }
 
   
-  @media (any-hover: hover) {
+  @media (hover: hover) {
     &:hover {
       transform: rotate(-20deg);
     }
   }
   animation: ${props => props.stateEdit? animEditIcon: 0} 1s linear infinite;
+
+
+
+  ${props => props.theme.beforeMobileL}{
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 `
 
 
@@ -141,7 +156,7 @@ export const ButtonDeleted = styled.button`
     opacity: 1;
   }
 
-  @media (any-hover: hover) {
+  @media (hover: hover) {
     &:hover {
       transform: rotate(90deg);
     }
@@ -166,4 +181,9 @@ export const ButtonDeleted = styled.button`
     transform: rotate(-45deg);
   }
 
+
+  ${props => props.theme.beforeMobileL}{
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 `;
