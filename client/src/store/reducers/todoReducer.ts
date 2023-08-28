@@ -82,6 +82,33 @@ export const todoReducer = (state: TodoListState = initState, action: TodoListAc
         itemsLeft: state.itemsLeft,
       }
 
+    case TodoListActionTypes.DRAG_DROP_PAST:
+
+      for (let i = 0; i < state.items.length; i++) {
+        if (state.items[i].id === action.payload.fromId) {
+
+        } else if (state.items[i].id === action.payload.toId) {
+          if (action.payload.directPast === 'down') {
+            resultItems.push(state.items[action.payload.fromId]);
+            resultItems.push(state.items[i]);
+          } else {
+            resultItems.push(state.items[i]);
+            resultItems.push(state.items[action.payload.fromId]);
+          }
+        } else {
+          resultItems.push(state.items[i]);
+        }
+      }
+      resultItems.forEach((el, id) => {
+        el.id = id;
+      });
+
+      return {
+        items: resultItems,
+        typeFilter: state.typeFilter,
+        itemsLeft: state.itemsLeft,
+      }
+
     default:
       return state;
   }
@@ -93,3 +120,4 @@ export const toggleCompletedTodoItemAction = (payload: number) => ({ type: TodoL
 export const clearCompletedAction = () => ({ type: TodoListActionTypes.CLEAR_COMPLETED });
 export const setFilterAction = (payload: typeFilter) => ({ type: TodoListActionTypes.SET_FILTER, payload });
 export const editTextItemAction = (payload: { id: number, newText: string }) => ({ type: TodoListActionTypes.EDIT_TEXT_ITEM, payload });
+export const dragDropPastAction = (payload: { fromId: number, toId: number, directPast: 'up' | 'down' }) => ({ type: TodoListActionTypes.DRAG_DROP_PAST, payload });

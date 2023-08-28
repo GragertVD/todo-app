@@ -7,7 +7,7 @@ import { GrEdit } from "react-icons/gr";
 
 
 
-export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
+export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed, ...onDragEvent }) => {
 
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
   useEffect(() => {
     setEditText(text);
   }, [text]);
-  
+
 
   return (
     <TodoItemContainer

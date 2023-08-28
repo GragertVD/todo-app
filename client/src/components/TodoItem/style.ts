@@ -15,6 +15,10 @@ export const TodoItemContainer = styled.div`
   
   cursor: pointer;
 
+  @media (hover: none) {
+    opacity: 1;
+  }
+
   @media (hover: hover) {
     button{
       opacity: 0;

@@ -6,6 +6,17 @@ export enum TodoListActionTypes {
   CLEAR_COMPLETED = 'CLEAR_COMPLETED',
   SET_FILTER = 'SET_FILTER',
   EDIT_TEXT_ITEM = 'EDIT_TEXT_ITEM',
+  DRAG_DROP_PAST = 'DRAG_DROP_PAST',
+}
+
+
+interface DragDropPastAction {
+  type: TodoListActionTypes.DRAG_DROP_PAST;
+  payload: {
+    fromId: number,
+    toId: number,
+    directPast: 'up' | 'down',
+  };
 }
 
 interface AddTodoItemAction {
@@ -37,7 +48,7 @@ interface EditTextItemAction {
   payload: { id: number, newText: string };
 }
 
-export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction | ClearCompletedAction | setFilterTodoItemAction | EditTextItemAction;
+export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction | ClearCompletedAction | setFilterTodoItemAction | EditTextItemAction | DragDropPastAction;
 
 export interface ITodoItem {
   id: number;
