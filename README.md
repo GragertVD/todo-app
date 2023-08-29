@@ -1,7 +1,7 @@
 # Todo app
 [Todo app](https://todo-app-liart-rho-37.vercel.app/)
 
-![Design preview for the Todo app coding challenge]([./preview.jpg](https://github.com/GragertVD/todo-app/blob/master/preview.JPG))
+![Design preview for the Todo app coding challenge](https://github.com/GragertVD/todo-app/blob/master/preview.JPG))
 
 ## Welcome! 👋
 ## Table of contents
