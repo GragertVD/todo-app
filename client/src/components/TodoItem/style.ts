@@ -5,7 +5,6 @@ export const TodoItemContainer = styled.div`
   overflow: hidden;
   min-height: 64px;
   padding: 20px 24px;
-  border-radius: 5px;
   background-color: ${props => props.theme.colorBackgroundItem};
   color: ${props => props.theme.colorTextItem};
 

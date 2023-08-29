@@ -7,7 +7,6 @@ const initState: TodoListState = {
 };
 
 export const todoReducer = (state: TodoListState = initState, action: TodoListAction): TodoListState => {
-  let completedDeletedItem;
   const resultItems = [];
 
   switch (action.type) {
@@ -24,6 +23,7 @@ export const todoReducer = (state: TodoListState = initState, action: TodoListAc
       }
 
     case TodoListActionTypes.REMOVE_TODO_ITEM:
+      let completedDeletedItem;
 
       for (let i = 0; i < state.items.length; i++) {
         if (state.items[i].id === action.payload) {

@@ -16,8 +16,9 @@ export const TodoList: React.FC = () => {
   return (
     <TodoListContainer>
       {
-        state.typeFilter === 'all' && state.items.map(el =>
+        state.items.map(el =>
           <div
+            key={el.id}
             style={{ width: '100%', height: '100%' }}
             draggable={true}
             onDragStart={(e) => mouveItemId = el.id}
@@ -26,8 +27,6 @@ export const TodoList: React.FC = () => {
                 if (el.id - prevItemId > 0) {
                   directPast = 'up';
                   prevItemId = el.id;
-                  console.log(mouveItemId);
-                  
                 } else if (el.id - prevItemId < 0) {
                   directPast = 'down'
                   prevItemId = el.id;
@@ -37,13 +36,15 @@ export const TodoList: React.FC = () => {
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))}
           >
-            <TodoItem key={el.id} {...el} />
+            {
+              state.typeFilter === 'completed' && !el.completed && <></>
+              ||
+              state.typeFilter === 'notCompleted' && el.completed && <></>
+              ||
+              <TodoItem key={el.id} {...el} />
+            }
           </div>
         )
-        ||
-        state.typeFilter === 'completed' && state.items.map(el => el.completed ? <TodoItem key={el.id} {...el} /> : <></>)
-        ||
-        state.typeFilter === 'notCompleted' && state.items.map(el => !el.completed ? <TodoItem key={el.id} {...el} /> : <></>)
       }
     </TodoListContainer >
   );

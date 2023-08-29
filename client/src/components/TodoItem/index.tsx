@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { GrEdit } from "react-icons/gr";
 
 
-
 export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed, ...onDragEvent }) => {
 
   const dispatch = useDispatch();
