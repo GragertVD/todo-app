@@ -1,5 +1,5 @@
-# [Todo app](https://todo-app-liart-rho-37.vercel.app/)
-[Todo app](https://todo-app-liart-rho-37.vercel.app/)
+# Todo app
+Demo: [Todo app](https://todo-app-liart-rho-37.vercel.app/)
 
 ![Design preview for the Todo app coding challenge](https://github.com/GragertVD/todo-app/blob/master/preview.JPG))
 
