@@ -35,7 +35,11 @@ export const TodoList: React.FC = () => {
               }
             }
             onDragOver={(e) => e.preventDefault()}
-            onDrop={() => dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))}
+            onDrop={() => {
+              if (mouveItemId !== el.id)
+                dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))
+            }
+            }
           >
             {
               state.typeFilter === 'completed' && !el.completed && <></>
