@@ -1,8 +1,9 @@
-import { TodoListContainer } from "./style";
+import React from 'react';
+import { TodoListContainer } from './style';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { TodoItem } from "../TodoItem";
-import { useDispatch } from "react-redux";
-import { dragDropPastAction } from "../../store/reducers/todoReducer";
+import { TodoItem } from '../TodoItem';
+import { useDispatch } from 'react-redux';
+import { dragDropPastAction } from '../../store/reducers/todoReducer';
 
 export const TodoList: React.FC = () => {
 
@@ -21,20 +22,20 @@ export const TodoList: React.FC = () => {
             key={el.id}
             style={{ width: '100%', height: '100%' }}
             draggable={true}
-            onDragStart={(e) => mouveItemId = el.id}
+            onDragStart={() => mouveItemId = el.id}
             onDragLeave={
-              (e) => {
+              () => {
                 if (el.id - prevItemId > 0) {
                   directPast = 'up';
                   prevItemId = el.id;
                 } else if (el.id - prevItemId < 0) {
-                  directPast = 'down'
+                  directPast = 'down';
                   prevItemId = el.id;
                 }
               }
             }
             onDragOver={(e) => e.preventDefault()}
-            onDrop={(e) => dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))}
+            onDrop={() => dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))}
           >
             {
               state.typeFilter === 'completed' && !el.completed && <></>
@@ -48,4 +49,4 @@ export const TodoList: React.FC = () => {
       }
     </TodoListContainer >
   );
-}
+};

@@ -1,9 +1,10 @@
-import { HeaderContainer } from "./style";
+import React from 'react';
+import { HeaderContainer } from './style';
 import { ReactComponent as LogoSun } from '../../img/icon-sun.svg';
 import { ReactComponent as LogoMoon } from '../../img/icon-moon.svg';
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { useDispatch } from "react-redux";
-import { setThemAction } from "../../store/reducers/mainReducer";
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useDispatch } from 'react-redux';
+import { setThemAction } from '../../store/reducers/mainReducer';
 
 
 export const Header: React.FC = () => {
@@ -33,4 +34,4 @@ export const Header: React.FC = () => {
       }
     </HeaderContainer>
   );
-}
+};

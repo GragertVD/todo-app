@@ -1,8 +1,8 @@
 
-export type Theme =  "light" | "dark"
+export type Theme = 'light' | 'dark'
 
 export enum MainActionTypes {
-  SET_THEME = "SET_THEME",
+  SET_THEME = 'SET_THEME',
 }
 
 export interface MainAction {

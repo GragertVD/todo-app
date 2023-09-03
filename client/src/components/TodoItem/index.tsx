@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-import { editTextItemAction, removeTodoItemAction, toggleCompletedTodoItemAction } from "../../store/reducers/todoReducer";
-import { ITodoItem } from "../../types/todo";
-import { TodoItemContainer, CircleItem, TextItem, ButtonDeleted, EditInputTextItem, ButtonEdit } from "./style";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { editTextItemAction, removeTodoItemAction, toggleCompletedTodoItemAction } from '../../store/reducers/todoReducer';
+import { ITodoItem } from '../../types/todo';
+import { TodoItemContainer, CircleItem, TextItem, ButtonDeleted, EditInputTextItem, ButtonEdit } from './style';
 import { useDispatch } from 'react-redux';
-import { GrEdit } from "react-icons/gr";
+import { GrEdit } from 'react-icons/gr';
 
 
-export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed, ...onDragEvent }) => {
+export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
 
   const dispatch = useDispatch();
 
@@ -68,4 +69,4 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed, ...onDragEv
       />
     </TodoItemContainer>
   );
-}
+};

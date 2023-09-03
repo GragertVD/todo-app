@@ -48,7 +48,8 @@ interface EditTextItemAction {
   payload: { id: number, newText: string };
 }
 
-export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction | ClearCompletedAction | setFilterTodoItemAction | EditTextItemAction | DragDropPastAction;
+export type TodoListAction = AddTodoItemAction | RemoveTodoItemAction | ToggleCompletedTodoItemAction 
+| ClearCompletedAction | setFilterTodoItemAction | EditTextItemAction | DragDropPastAction;
 
 export interface ITodoItem {
   id: number;

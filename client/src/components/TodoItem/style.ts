@@ -44,7 +44,7 @@ export const TodoItemContainer = styled.div`
 export const TextItem = styled.p<{ completed: boolean }>`
   background-color: ${props => props.theme.colorBackgroundItem};
   color: ${props => props.completed ? props.theme.colorTextCompletedItem : props.theme.colorTextItem};
-  ${props => props.completed ? `text-decoration: line-through;` : ``}
+  ${props => props.completed ? 'text-decoration: line-through;' : ''}
   border: none;
   font-size: 1.125rem;
   width: 100%;
@@ -58,7 +58,7 @@ export const CircleItem = styled.div<{ completed: boolean }>`
   border-radius: 50%;
   border: 1px solid ${props => props.theme.colorLine};
   ${props => !props.completed
-    ? ``
+    ? ''
     : `
     background: linear-gradient(#55DDFF, #C058F3);
 
@@ -97,9 +97,9 @@ const animEditIcon = keyframes`
     100%{
       transform: rotate(15deg);
     }
-`
+`;
 export const ButtonEdit = styled.button<{ stateEdit: boolean }>`
-  ${props => props.stateEdit ? `opacity: 1 !important;` : ``}
+  ${props => props.stateEdit ? 'opacity: 1 !important;' : ''}
   cursor: pointer;
   transition: opacity ease 0.5s;
   flex-shrink: 0;
@@ -116,7 +116,7 @@ export const ButtonEdit = styled.button<{ stateEdit: boolean }>`
     width: 100%;
     height: 100%;
     path{
-      stroke: ${props => props.stateEdit ? `red` : props.theme.colorCross};
+      stroke: ${props => props.stateEdit ? 'red' : props.theme.colorCross};
       stroke-width: 1px;
     }
   }
@@ -139,7 +139,7 @@ export const ButtonEdit = styled.button<{ stateEdit: boolean }>`
     width: 1.1rem;
     height: 1.1rem;
   }
-`
+`;
 
 
 export const ButtonDeleted = styled.button`

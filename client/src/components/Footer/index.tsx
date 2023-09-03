@@ -1,4 +1,5 @@
-import { ContactsContainer, FooterContainer } from "./style";
+import React from 'react';
+import { ContactsContainer, FooterContainer } from './style';
 
 export const Footer: React.FC = () => {
 
@@ -7,9 +8,9 @@ export const Footer: React.FC = () => {
       <h3>Created by Gragert</h3>
       <ContactsContainer>
         <h4>Contacts: </h4>
-        <a href="https://t.me/gragert_vd" target="_blank" >Telegrem</a>
-        <a href="https://github.com/GragertVD" target="_blank" >GitHub</a>
+        <a href="https://t.me/gragert_vd" target="_blank" rel="noreferrer" >Telegrem</a>
+        <a href="https://github.com/GragertVD" target="_blank" rel="noreferrer" >GitHub</a>
       </ContactsContainer>
     </FooterContainer>
   );
-}
+};

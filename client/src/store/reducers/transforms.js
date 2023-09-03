@@ -1,13 +1,13 @@
 import { createTransform } from 'redux-persist';
 
 const SetTransform = createTransform(
-  (inboundState, key) => {
+  (inboundState) => {
     return Object.assign({}, inboundState);
   },
-  (outboundState, key) => {
+  (outboundState) => {
     return Object.values(outboundState);
   },
-  { whitelist: ['listMultipl'] }
+  { whitelist: ['listMultipl'], }
 );
 
 export default SetTransform;

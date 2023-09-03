@@ -1,6 +1,6 @@
 export const lightTheme = {
 
-  theme: "light",
+  theme: 'light',
   colorBackground: '#F5F5F5',
   colorBackgroundItem: '#FFFFFF',
   colorTextItem: '#494C6B',
@@ -15,30 +15,30 @@ export const lightTheme = {
   white: '#FFFFFF',
 
 
-  fromMobileS: "@media (min-width: 320px)",
-  fromMobileM: "@media (min-width: 375px)",
-  fromMobileL: "@media (min-width: 425px)",
-  fromTabletSM: "@media (max-width: 576px)",
-  fromTablet: "@media (min-width: 768px)",
-  fromLaptop: "@media (min-width: 1024px)",
-  fromLaptopL: "@media (min-width: 1440px)",
-  fromDesktop: "@media (min-width: 2560px)",
+  fromMobileS: '@media (min-width: 320px)',
+  fromMobileM: '@media (min-width: 375px)',
+  fromMobileL: '@media (min-width: 425px)',
+  fromTabletSM: '@media (max-width: 576px)',
+  fromTablet: '@media (min-width: 768px)',
+  fromLaptop: '@media (min-width: 1024px)',
+  fromLaptopL: '@media (min-width: 1440px)',
+  fromDesktop: '@media (min-width: 2560px)',
 
 
-  beforeMobileS: "@media (max-width: 320px)",
-  beforeMobileM: "@media (max-width: 375px)",
-  beforeMobileL: "@media (max-width: 425px)",
-  beforeTabletSM: "@media (max-width: 576px)",
-  beforeTablet: "@media (max-width: 768px)",
-  beforeLaptop: "@media (max-width: 1024px)",
-  beforeLaptopL: "@media (max-width: 1440px)",
-  beforeDesktop: "@media (max-width: 2560px)",
+  beforeMobileS: '@media (max-width: 320px)',
+  beforeMobileM: '@media (max-width: 375px)',
+  beforeMobileL: '@media (max-width: 425px)',
+  beforeTabletSM: '@media (max-width: 576px)',
+  beforeTablet: '@media (max-width: 768px)',
+  beforeLaptop: '@media (max-width: 1024px)',
+  beforeLaptopL: '@media (max-width: 1440px)',
+  beforeDesktop: '@media (max-width: 2560px)',
 
 };
 
 export const darkTheme = {
 
-  theme: "dark",
+  theme: 'dark',
   colorBackground: '#171823',
   colorBackgroundItem: '#25273D',
   colorTextItem: '#C8CBE7',
@@ -53,23 +53,23 @@ export const darkTheme = {
   white: '#FFFFFF',
 
 
-  fromMobileS: "@media (min-width: 320px)",
-  fromMobileM: "@media (min-width: 375px)",
-  fromMobileL: "@media (min-width: 425px)",
-  fromTabletSM: "@media (max-width: 576px)",
-  fromTablet: "@media (min-width: 768px)",
-  fromLaptop: "@media (min-width: 1024px)",
-  fromLaptopL: "@media (min-width: 1440px)",
-  fromDesktop: "@media (min-width: 2560px)",
+  fromMobileS: '@media (min-width: 320px)',
+  fromMobileM: '@media (min-width: 375px)',
+  fromMobileL: '@media (min-width: 425px)',
+  fromTabletSM: '@media (max-width: 576px)',
+  fromTablet: '@media (min-width: 768px)',
+  fromLaptop: '@media (min-width: 1024px)',
+  fromLaptopL: '@media (min-width: 1440px)',
+  fromDesktop: '@media (min-width: 2560px)',
 
 
-  beforeMobileS: "@media (max-width: 320px)",
-  beforeMobileM: "@media (max-width: 375px)",
-  beforeMobileL: "@media (max-width: 425px)",
-  beforeTabletSM: "@media (max-width: 576px)",
-  beforeTablet: "@media (max-width: 768px)",
-  beforeLaptop: "@media (max-width: 1024px)",
-  beforeLaptopL: "@media (max-width: 1440px)",
-  beforeDesktop: "@media (max-width: 2560px)",
+  beforeMobileS: '@media (max-width: 320px)',
+  beforeMobileM: '@media (max-width: 375px)',
+  beforeMobileL: '@media (max-width: 425px)',
+  beforeTabletSM: '@media (max-width: 576px)',
+  beforeTablet: '@media (max-width: 768px)',
+  beforeLaptop: '@media (max-width: 1024px)',
+  beforeLaptopL: '@media (max-width: 1440px)',
+  beforeDesktop: '@media (max-width: 2560px)',
 
 };

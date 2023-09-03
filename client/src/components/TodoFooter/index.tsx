@@ -1,8 +1,9 @@
-import { TodoFooterContainer } from "./style";
+import React from 'react';
+import { TodoFooterContainer } from './style';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useDispatch } from "react-redux";
-import { clearCompletedAction, setFilterAction } from "../../store/reducers/todoReducer";
-import { typeFilter } from "../../types/todo";
+import { useDispatch } from 'react-redux';
+import { clearCompletedAction, setFilterAction } from '../../store/reducers/todoReducer';
+import { typeFilter } from '../../types/todo';
 
 export const TodoFooter: React.FC = () => {
 
@@ -10,11 +11,11 @@ export const TodoFooter: React.FC = () => {
   const dispatch = useDispatch();
 
   const getSelectFilterNumber = (typeFilter: typeFilter) => {
-    if (typeFilter === 'all') return 1
-    if (typeFilter === 'notCompleted') return 2
-    if (typeFilter === 'completed') return 3
+    if (typeFilter === 'all') return 1;
+    if (typeFilter === 'notCompleted') return 2;
+    if (typeFilter === 'completed') return 3;
     return 0;
-  }
+  };
 
   return (
     <TodoFooterContainer selectFilterNumber={getSelectFilterNumber(state.typeFilter)}>
@@ -27,4 +28,4 @@ export const TodoFooter: React.FC = () => {
       <button onClick={() => dispatch(clearCompletedAction())}>Clear Completed</button>
     </TodoFooterContainer>
   );
-}
+};

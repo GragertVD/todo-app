@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Circle, CreateItemContainer, Input } from "./style";
-import { useDispatch } from "react-redux";
-import { addTodoItemAction } from "../../store/reducers/todoReducer";
+import React from 'react';
+import { useState } from 'react';
+import { Circle, CreateItemContainer, Input } from './style';
+import { useDispatch } from 'react-redux';
+import { addTodoItemAction } from '../../store/reducers/todoReducer';
 
 export const CreateItem: React.FC = () => {
 
@@ -26,4 +27,4 @@ export const CreateItem: React.FC = () => {
       />
     </CreateItemContainer>
   );
-}
+};
