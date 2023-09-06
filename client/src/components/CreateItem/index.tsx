@@ -13,9 +13,10 @@ export const CreateItem: React.FC = () => {
     <CreateItemContainer
       onSubmit={
         (e) => {
+          e.preventDefault();
+          if (!text) return;
           dispatch(addTodoItemAction(text));
           setText('');
-          e.preventDefault();
         }
       }
     >

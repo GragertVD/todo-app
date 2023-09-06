@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { editTextItemAction, removeTodoItemAction, toggleCompletedTodoItemAction } from '../../store/reducers/todoReducer';
 import { ITodoItem } from '../../types/todo';
@@ -13,6 +13,7 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
 
   const [stateEdit, setStateEdit] = useState<boolean>(false);
   const [editText, setEditText] = useState<string>(text);
+  const refInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setEditText(text);
@@ -23,7 +24,12 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
     <TodoItemContainer
       onClick={() => !stateEdit && dispatch(toggleCompletedTodoItemAction(id))}
     >
-      <CircleItem completed={completed} />
+      <CircleItem
+        role='checkbox'
+        completed={completed}
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && !stateEdit && dispatch(toggleCompletedTodoItemAction(id))}
+      />
       {
         stateEdit
           ?
@@ -37,6 +43,7 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
             }
           >
             <EditInputTextItem
+              ref={refInput}
               value={editText}
               onChange={e => setEditText(e.target.value)}
             />
@@ -50,6 +57,9 @@ export const TodoItem: React.FC<ITodoItem> = ({ id, text, completed }) => {
           (e) => {
             setStateEdit(!stateEdit);
             e.currentTarget.blur();
+            setTimeout(() => {
+              refInput.current && refInput.current.focus();
+            }, 0);
             e.stopPropagation();
           }
         }
