@@ -7,3 +7,16 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
 `;
+
+export const ButtonOpenSettings = styled.button`
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: ${props => props.theme.colorBackground};
+  color: ${props => props.theme.colorTextCompletedItem};
+  border: 1px solid ${props => props.theme.colorLine};
+
+  &:hover{
+    color: ${props => props.theme.colorTextFilter};
+  }
+`;

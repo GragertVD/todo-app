@@ -6,6 +6,8 @@ import { AppContainer, TodoContainer } from './style';
 import { Header } from '../components/Header';
 import { Main } from '../components/Main';
 import { Footer } from '../components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { TodoFooter } from '../components/TodoFooter';
 
 
 function App() {
@@ -13,15 +15,25 @@ function App() {
   const mainState = useTypedSelector(state => state.main);
 
   return (
-
     <ThemeProvider theme={mainState.theme === 'light' ? lightTheme : darkTheme}>
-      <AppContainer>
-        <TodoContainer>
-          <Header />
-          <Main />
-          <Footer />
-        </TodoContainer>
-      </AppContainer>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={
+              <AppContainer>
+                <TodoContainer>
+                  <Header />
+                  <Main />
+                  <Footer />
+                </TodoContainer>
+              </AppContainer>
+            } />
+            <Route path="settings" element={
+              <TodoFooter />
+            } />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider >
   );
 }

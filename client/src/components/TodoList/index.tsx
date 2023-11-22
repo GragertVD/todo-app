@@ -37,7 +37,7 @@ export const TodoList: React.FC = () => {
             onDragOver={(e) => e.preventDefault()}
             onDrop={() => {
               if (mouveItemId !== el.id)
-                dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }))
+                dispatch(dragDropPastAction({ fromId: mouveItemId, toId: el.id, directPast }));
             }
             }
           >
