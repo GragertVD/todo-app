@@ -1,4 +1,4 @@
-# Todo app
+# Todo app multi-window
 Demo: [Todo app](https://todo-app-liart-rho-37.vercel.app/)
 
 ## Welcome! 👋
