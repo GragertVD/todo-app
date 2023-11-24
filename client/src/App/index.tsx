@@ -18,20 +18,18 @@ function App() {
     <ThemeProvider theme={mainState.theme === 'light' ? lightTheme : darkTheme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-            <Route index element={
-              <AppContainer>
-                <TodoContainer>
-                  <Header />
-                  <Main />
-                  <Footer />
-                </TodoContainer>
-              </AppContainer>
-            } />
-            <Route path="settings" element={
-              <TodoFooter />
-            } />
-          </Route>
+          <Route path="/" element={
+            <AppContainer>
+              <TodoContainer>
+                <Header />
+                <Main />
+                <Footer />
+              </TodoContainer>
+            </AppContainer>
+          } />
+          <Route path="settings" element={
+            <TodoFooter />
+          } />
         </Routes>
       </BrowserRouter>
     </ThemeProvider >
