@@ -9,11 +9,7 @@ import SetTransform from './reducers/transforms';
 
 import { createStateSyncMiddleware, initMessageListener } from 'redux-state-sync';
 
-const config = {
-  // TOGGLE_TODO will not be triggered in other tabs
-  blacklist: ['TOGGLE_TODO'],
-};
-const middlewares = [createStateSyncMiddleware(config)];
+const middlewares = [createStateSyncMiddleware({})];
 
 
 const persistConfig = {
