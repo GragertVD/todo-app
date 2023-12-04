@@ -37,6 +37,7 @@ Users should be able to:
 - TypeScript
 - Styled-components
 - ThemeProvider, React icon
+- React Router и redux state sync (Для реализации многооконного приложения)
 
 ### Screenshot 
 ![](https://github.com/GragertVD/todo-app/blob/master/preview.JPG)
